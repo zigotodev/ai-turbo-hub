@@ -5,18 +5,33 @@ import FeaturedTools from '@/sections/FeaturedTools'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+
   return (
-    <main className="bg-[#050816] overflow-x-hidden">
+    <main className="relative bg-[#050816] overflow-hidden">
 
-      <Navbar />
+      {/* BACKGROUND GLOWS */}
 
-      <Hero />
+      <div className="absolute top-0 left-[-200px] w-[500px] h-[500px] bg-indigo-600/20 blur-[140px] rounded-full" />
 
-      <Trending />
+      <div className="absolute top-[600px] right-[-200px] w-[500px] h-[500px] bg-purple-600/20 blur-[140px] rounded-full" />
 
-      <FeaturedTools />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-cyan-500/10 blur-[180px] rounded-full" />
 
-      <Footer />
+      {/* CONTENT */}
+
+      <div className="relative z-10">
+
+        <Navbar />
+
+        <Hero />
+
+        <Trending />
+
+        <FeaturedTools />
+
+        <Footer />
+
+      </div>
 
     </main>
   )

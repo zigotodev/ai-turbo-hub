@@ -10,3 +10,34 @@ body {
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050816;
+}
+
+::selection {
+  background: #6366f1;
+  color: white;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.5);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.8);
+}
