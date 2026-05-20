@@ -22,7 +22,11 @@ export default function ToolCard({
   return (
     <motion.div
       whileHover={{ y: -10 }}
-      transition={{ duration: 0.25 }}
+      transition={{
+  type: 'spring',
+  stiffness: 260,
+  damping: 20,
+}}
     >
 
       <Link
