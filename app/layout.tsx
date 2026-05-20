@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     template: '%s | AI Turbo Hub',
   },
 
+  verification: {
+  google: '7N15O4PU-ANcddeq-o0OBts4phImr14nz74mJv9xZpk',
+},
+
   description:
     'Descubra as ferramentas de inteligência artificial mais virais da internet.',
 
