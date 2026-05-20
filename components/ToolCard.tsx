@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 type Props = {
   title: string
@@ -15,43 +18,62 @@ export default function ToolCard({
   category,
   slug,
 }: Props) {
+
   return (
-    <Link href={`/tools/${slug}`}>
+    <motion.div
+      whileHover={{ y: -10 }}
+      transition={{ duration: 0.25 }}
+    >
 
-      <div className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden hover:border-indigo-500/40 hover:bg-white/[0.05] transition duration-300 cursor-pointer">
+      <Link
+        href={`/tools/${slug}`}
+        className="group relative block overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03] backdrop-blur-xl"
+      >
 
+        {/* IMAGE */}
         <div className="overflow-hidden">
 
           <img
             src={image}
             alt={title}
-            className="w-full h-64 object-cover hover:scale-105 transition duration-700"
+            className="w-full h-60 object-cover group-hover:scale-110 transition duration-700"
           />
 
         </div>
 
-        <div className="p-6">
+        {/* GLOW */}
+        <div className="absolute inset-0 bg-indigo-500/0 group-hover:bg-indigo-500/5 transition duration-500" />
 
-          <span className="text-indigo-400 text-sm">
+        {/* CONTENT */}
+        <div className="p-8 relative z-10">
+
+          <span className="text-indigo-400 text-sm font-medium tracking-wide">
             {category}
           </span>
 
-          <h3 className="text-2xl font-bold text-white mt-3">
+          <h3 className="text-3xl font-black text-white mt-4 leading-tight">
             {title}
           </h3>
 
-          <p className="text-gray-400 mt-4 leading-relaxed">
+          <p className="text-gray-400 mt-5 leading-relaxed">
             {description}
           </p>
 
-          <button className="mt-6 bg-indigo-600 hover:bg-indigo-500 transition px-5 py-3 rounded-2xl text-white font-medium">
-            Ver ferramenta
-          </button>
+          {/* BUTTON */}
+          <div className="mt-8">
+
+            <span className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all">
+
+              Explorar IA →
+
+            </span>
+
+          </div>
 
         </div>
 
-      </div>
+      </Link>
 
-    </Link>
+    </motion.div>
   )
 }
