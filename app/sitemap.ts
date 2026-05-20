@@ -1,35 +1,41 @@
+import { MetadataRoute } from 'next'
+
 import { articles } from '@/data/articles'
 import { tools } from '@/data/tools'
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
 
-  const blogRoutes = articles.map((article) => ({
-    url: `https://aiturbohub.com/blog/${article.slug}`,
+  const baseUrl = 'https://ai-turbo-hub.vercel.app'
+
+  const articleUrls = articles.map((article) => ({
+    url: `${baseUrl}/blog/${article.slug}`,
     lastModified: new Date(),
   }))
 
-  const toolRoutes = tools.map((tool) => ({
-    url: `https://aiturbohub.com/tools/${tool.slug}`,
+  const toolUrls = tools.map((tool) => ({
+    url: `${baseUrl}/tools/${tool.slug}`,
     lastModified: new Date(),
   }))
 
   return [
+
     {
-      url: 'https://aiturbohub.com',
+      url: baseUrl,
       lastModified: new Date(),
     },
 
     {
-      url: 'https://aiturbohub.com/blog',
+      url: `${baseUrl}/blog`,
       lastModified: new Date(),
     },
 
     {
-      url: 'https://aiturbohub.com/tools',
+      url: `${baseUrl}/tools`,
       lastModified: new Date(),
     },
 
-    ...blogRoutes,
-    ...toolRoutes,
+    ...articleUrls,
+    ...toolUrls,
+
   ]
 }
