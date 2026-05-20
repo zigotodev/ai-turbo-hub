@@ -3,7 +3,6 @@ import './globals.css'
 import Analytics from '@/components/Analytics'
 
 export const metadata: Metadata = {
-
   title: {
     default: 'AI Turbo Hub',
     template: '%s | AI Turbo Hub',
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://ai-turbo-hub.vercel.app'),
 
   openGraph: {
-
     title: 'AI Turbo Hub',
 
     description:
@@ -62,7 +60,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-
 }
 
 export default function RootLayout({
@@ -70,16 +67,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
   return (
     <html lang="pt-BR">
-
       <body>
-        {children}
-      </body>
-      
-      <Analytics />
 
+        {children}
+
+        <Analytics />
+
+      </body>
     </html>
   )
 }
