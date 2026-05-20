@@ -2,42 +2,81 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AI Turbo Hub',
+
+  title: {
+    default: 'AI Turbo Hub',
+    template: '%s | AI Turbo Hub',
+  },
+
   description:
-    'Descubra as melhores ferramentas de inteligência artificial, produtividade, marketing e automação em 2026.',
+    'Descubra as ferramentas de inteligência artificial mais virais da internet.',
 
   keywords: [
     'IA',
     'Inteligência Artificial',
-    'Ferramentas IA',
+    'AI Tools',
     'ChatGPT',
     'Midjourney',
-    'AI Tools',
     'Automação',
-    'Marketing Digital',
+    'Produtividade',
+    'Marketing IA',
   ],
 
+  metadataBase: new URL('https://ai-turbo-hub.vercel.app'),
+
   openGraph: {
+
     title: 'AI Turbo Hub',
+
     description:
-      'As melhores ferramentas de IA do momento.',
-    url: 'https://aiturbohub.com',
+      'As ferramentas de inteligência artificial mais acessadas do momento.',
+
+    url: 'https://ai-turbo-hub.vercel.app',
+
     siteName: 'AI Turbo Hub',
+
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
+        width: 1200,
+        height: 630,
+      },
+    ],
+
     locale: 'pt_BR',
     type: 'website',
   },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Turbo Hub',
+    description:
+      'Descubra ferramentas virais de inteligência artificial.',
+    images: [
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop',
+    ],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
+
   return (
     <html lang="pt-BR">
+
       <body>
         {children}
       </body>
+
     </html>
   )
 }
