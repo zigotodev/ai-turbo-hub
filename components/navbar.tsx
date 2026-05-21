@@ -102,6 +102,13 @@ export default function Navbar() {
               Blog
             </Link>
 
+             <Link
+            href="/about"
+            className="hover:text-white transition"
+          >
+            Sobre
+          </Link>
+
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
