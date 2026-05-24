@@ -1,6 +1,5 @@
-import BackHome from '@/components/BackHome'
 export const articles = [
-  {
+ {
     slug: 'ia-para-videos-virais',
     title: 'IA para vídeos virais',
     description: 'Ferramentas de IA para Shorts, TikTok e Reels.',
