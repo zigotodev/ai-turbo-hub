@@ -1,4 +1,3 @@
-import BackHome from '@/components/BackHome'
 export default function TermsPage() {
   
 
@@ -7,7 +6,7 @@ export default function TermsPage() {
 
       <div className="max-w-4xl mx-auto">
 
-        <BackHome />
+        
 
         <h1 className="text-5xl font-bold mb-10">
           Termos de Uso

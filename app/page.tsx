@@ -1,4 +1,4 @@
-import Navbar from '@/components/navbar'
+
 import Hero from '@/sections/Hero'
 import Trending from '@/sections/Trending'
 import FeaturedTools from '@/sections/FeaturedTools'
@@ -21,7 +21,6 @@ export default function Home() {
 
       <div className="relative z-10">
 
-        <Navbar />
 
         <Hero />
 
