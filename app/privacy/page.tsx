@@ -1,8 +1,10 @@
+import BackHome from '@/components/BackHome'
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#050816] text-white px-6 py-32">
 
       <div className="max-w-4xl mx-auto">
+        <BackHome />
 
         <h1 className="text-5xl font-bold mb-10">
           Política de Privacidade

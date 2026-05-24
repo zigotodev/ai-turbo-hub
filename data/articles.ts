@@ -1,3 +1,4 @@
+import BackHome from '@/components/BackHome'
 export const articles = [
   {
     slug: 'ia-para-videos-virais',

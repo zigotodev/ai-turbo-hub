@@ -1,5 +1,7 @@
 import { articles } from '@/data/articles'
 
+import BackHome from '@/components/BackHome'
+
 import Tools from '@/components/tools'
 
 import type { Metadata } from 'next'

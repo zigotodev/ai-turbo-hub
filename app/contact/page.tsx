@@ -1,8 +1,12 @@
+import BackHome from "@/components/BackHome";
+
 export default function ContactPage() {
+  
   return (
     <main className="min-h-screen bg-[#050816] text-white flex items-center justify-center px-6">
 
       <div className="max-w-2xl w-full bg-white/5 border border-white/10 rounded-3xl p-10">
+        <BackHome />
 
         <h1 className="text-5xl font-black">
           Contato
