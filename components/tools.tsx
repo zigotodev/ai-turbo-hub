@@ -32,7 +32,6 @@ export default function Tools() {
               key={tool.slug}
               className="bg-white/[0.03] border border-white/10 rounded-3xl overflow-hidden hover:bg-white/[0.05] transition block"
             >
-
               <img
                 src={tool.image}
                 alt={tool.name}

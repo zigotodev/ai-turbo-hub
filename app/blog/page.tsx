@@ -9,8 +9,6 @@ export default function BlogPage() {
 
       <div className="max-w-7xl mx-auto">
 
-      
-
         <h1 className="text-6xl font-black">
           Blog de IA
         </h1>

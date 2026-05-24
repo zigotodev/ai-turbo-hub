@@ -49,7 +49,6 @@ export default function ArticlePage({ params }: Props) {
     )
   }
   
-
   return (
     <main className="min-h-screen bg-[#050816] text-white">
 

@@ -1,7 +1,6 @@
 import { articles } from '@/data/articles'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
-import BackHome from '@/components/BackHome'
 
 type Props = {
   params: Promise<{
@@ -51,8 +50,6 @@ export default async function ArticlePage({ params }: Props) {
         <span className="text-indigo-400 text-sm uppercase tracking-widest">
           {article.category}
         </span>
-        
-<BackHome />
 
         <h1 className="text-5xl font-black mt-6 leading-tight">
           {article.title}

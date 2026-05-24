@@ -5,7 +5,6 @@ export default function ContactPage() {
 
       <div className="max-w-2xl w-full bg-white/5 border border-white/10 rounded-3xl p-10">
        
-
         <h1 className="text-5xl font-black">
           Contato
         </h1>

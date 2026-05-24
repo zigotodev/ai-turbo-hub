@@ -1,4 +1,3 @@
-
 import Hero from '@/sections/Hero'
 import Trending from '@/sections/Trending'
 import FeaturedTools from '@/sections/FeaturedTools'
@@ -20,7 +19,6 @@ export default function Home() {
       {/* CONTENT */}
 
       <div className="relative z-10">
-
 
         <Hero />
 
