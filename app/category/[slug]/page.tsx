@@ -1,5 +1,4 @@
 import { articles } from '@/data/articles'
-
 import Tools from '@/components/tools'
 
 import type { Metadata } from 'next'
@@ -10,6 +9,7 @@ type Props = {
     slug: string
   }
 }
+
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
@@ -20,7 +20,7 @@ export async function generateMetadata(
 
   if (!article) {
     return {
-      title: 'Artigo não encontrado'
+      title: 'Artigo não encontrado | AI Turbo Hub',
     }
   }
 
@@ -44,62 +44,21 @@ export default function ArticlePage({ params }: Props) {
 
   if (!article) {
     return (
-      <div
-  className="
-    prose
-    prose-invert
-    prose-lg
-    max-w-none
-    mt-16
-
-    prose-headings:text-white
-    prose-headings:font-black
-    prose-headings:tracking-tight
-
-    prose-h1:text-5xl
-    prose-h1:mb-8
-
-    prose-h2:text-4xl
-    prose-h2:mt-20
-    prose-h2:mb-8
-    prose-h2:border-b
-    prose-h2:border-white/10
-    prose-h2:pb-4
-
-    prose-h3:text-3xl
-    prose-h3:mt-16
-    prose-h3:mb-6
-
-    prose-p:text-gray-300
-    prose-p:leading-8
-    prose-p:mb-8
-
-    prose-strong:text-white
-
-    prose-ul:my-8
-    prose-ul:space-y-4
-
-    prose-li:text-gray-300
-    prose-li:marker:text-indigo-400
-
-    prose-hr:border-white/10
-  "
->
-  <ReactMarkdown>
-    
-    {article.content}
-  </ReactMarkdown>
-</div>
+      <main className="min-h-screen bg-[#050816] text-white flex items-center justify-center">
+        <h1 className="text-3xl font-bold">
+          Artigo não encontrado
+        </h1>
+      </main>
     )
   }
-  
+
   return (
     <main className="min-h-screen bg-[#050816] text-white">
 
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-6 pt-40 pb-20">
 
-        <span className="text-indigo-400 font-medium">
+        <span className="inline-block px-4 py-2 rounded-full bg-indigo-500/20 text-indigo-400 text-sm font-semibold">
           {article.category}
         </span>
 
@@ -113,7 +72,8 @@ export default function ArticlePage({ params }: Props) {
 
         <img
           src={article.image}
-          className="w-full h-[500px] object-cover rounded-3xl mt-14"
+          alt={article.title}
+          className="w-full h-[500px] object-cover rounded-3xl mt-14 border border-white/10"
         />
 
       </section>
@@ -121,44 +81,79 @@ export default function ArticlePage({ params }: Props) {
       {/* CONTENT */}
       <section className="max-w-4xl mx-auto px-6 pb-32">
 
-        <div className="prose prose-invert prose-lg max-w-none">
+        <div
+          className="
+            prose
+            prose-invert
+            prose-lg
+            max-w-none
+
+            prose-headings:text-white
+            prose-headings:font-black
+            prose-headings:tracking-tight
+
+            prose-h2:text-4xl
+            prose-h2:mt-20
+            prose-h2:mb-8
+            prose-h2:border-b
+            prose-h2:border-white/10
+            prose-h2:pb-4
+
+            prose-p:text-gray-300
+            prose-p:leading-8
+            prose-p:mb-8
+
+            prose-strong:text-white
+
+            prose-ul:my-8
+            prose-ul:space-y-4
+
+            prose-li:text-gray-300
+            prose-li:marker:text-indigo-400
+          "
+        >
+
+        <ReactMarkdown>
+  {article.content as string}
+</ReactMarkdown>
+          <h2>
+            O futuro das inteligências artificiais
+          </h2>
+
+          <p>
+            Ferramentas de IA estão revolucionando o mercado digital.
+            Empresas e criadores estão usando automações para crescer
+            mais rápido e reduzir custos.
+          </p>
 
           <h2>
-  O futuro das inteligências artificiais
-</h2>
+            Como ganhar dinheiro com IA
+          </h2>
 
-<p>
-  Ferramentas de IA estão revolucionando o mercado digital.
-  Empresas e criadores estão usando automações para crescer
-  mais rápido e reduzir custos.
-</p>
+          <p>
+            Existem dezenas de maneiras de monetizar ferramentas
+            de inteligência artificial, incluindo afiliados,
+            criação de conteúdo, automação e geração de leads.
+          </p>
 
-<h2>
-  Como ganhar dinheiro com IA
-</h2>
+          <h2>
+            Melhor estratégia em 2026
+          </h2>
 
-<p>
-  Existem dezenas de maneiras de monetizar ferramentas
-  de inteligência artificial, incluindo afiliados,
-  criação de conteúdo, automação e geração de leads.
-</p>
+          <p>
+            Criar um portal de conteúdo otimizado para SEO
+            continua sendo uma das estratégias mais fortes
+            para gerar tráfego orgânico.
+          </p>
 
-<h2>
-  Melhor estratégia em 2026
-</h2>
-
-<p>
-  Criar um portal de conteúdo otimizado para SEO
-  continua sendo uma das estratégias mais fortes
-  para gerar tráfego orgânico.
-</p>
         </div>
 
-        <Tools />
+        <div className="mt-24">
+          <Tools />
+        </div>
 
       </section>
 
     </main>
-    
   )
 }

@@ -1,9 +1,17 @@
-export const articles = [
+type Article = {
+  slug: string
+  title: string
+  description: string
+  image: string
+  category: string
+  content: string
+}
+export const articles: Article[] = [
   {
     slug: '5-ferramentas-ia-2026',
 
     title: '5 Ferramentas de IA Que Estão Fazendo Sucesso em 2026',
-    
+
 category: 'INTELIGÊNCIA ARTIFICIAL',
 
     image:
@@ -12,10 +20,10 @@ category: 'INTELIGÊNCIA ARTIFICIAL',
     description:
       'Descubra as inteligências artificiais mais usadas em 2026.',
 
-    content: (
+    content: `
       <div className="text-white text-4xl">
         FUNCIONOU
       </div>
-    ),
+    ),`,
   },
 ]
