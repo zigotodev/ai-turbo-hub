@@ -15,8 +15,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 
   const article = articles.find(
-  (item) => item.slug === params.slug
-)
+    (item) => item.slug === params.slug
+  )
 
   if (!article) {
     return {
