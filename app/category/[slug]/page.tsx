@@ -3,6 +3,7 @@ import { articles } from '@/data/articles'
 import Tools from '@/components/tools'
 
 import type { Metadata } from 'next'
+import ReactMarkdown from 'react-markdown'
 
 type Props = {
   params: {
@@ -14,8 +15,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 
   const article = articles.find(
-    (item) => item.slug === params.slug
-  )
+  (item) => item.slug === params.slug
+)
 
   if (!article) {
     return {
@@ -43,9 +44,52 @@ export default function ArticlePage({ params }: Props) {
 
   if (!article) {
     return (
-      <div className="text-white p-20">
-        Artigo não encontrado.
-      </div>
+      <div
+  className="
+    prose
+    prose-invert
+    prose-lg
+    max-w-none
+    mt-16
+
+    prose-headings:text-white
+    prose-headings:font-black
+    prose-headings:tracking-tight
+
+    prose-h1:text-5xl
+    prose-h1:mb-8
+
+    prose-h2:text-4xl
+    prose-h2:mt-20
+    prose-h2:mb-8
+    prose-h2:border-b
+    prose-h2:border-white/10
+    prose-h2:pb-4
+
+    prose-h3:text-3xl
+    prose-h3:mt-16
+    prose-h3:mb-6
+
+    prose-p:text-gray-300
+    prose-p:leading-8
+    prose-p:mb-8
+
+    prose-strong:text-white
+
+    prose-ul:my-8
+    prose-ul:space-y-4
+
+    prose-li:text-gray-300
+    prose-li:marker:text-indigo-400
+
+    prose-hr:border-white/10
+  "
+>
+  <ReactMarkdown>
+    
+    {article.content}
+  </ReactMarkdown>
+</div>
     )
   }
   
